@@ -30,5 +30,9 @@ app.register_blueprint(analytics_bp, url_prefix='/api')
 from routes.admin import admin_bp
 app.register_blueprint(admin_bp, url_prefix='/api/admin')
 
+@app.route("/api/test")
+def test():
+    return {"message": "Backend working"}
+ 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
